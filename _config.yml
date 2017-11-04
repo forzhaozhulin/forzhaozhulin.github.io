@@ -7,7 +7,7 @@
 
 # Site settings
 title: forest
-brief-intro: Front-end Dev Engineer
+brief-intro: 每天进步一点
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fozhaozhulin.github.io" # the base hostname & protocol for your site
 
