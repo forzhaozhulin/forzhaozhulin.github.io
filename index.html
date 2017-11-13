@@ -4,8 +4,7 @@ layout: default
 
 <div class="page clearfix" index>
     <div class="left">
-		<h2>欢迎欢迎 ~ 随便看看 ~</h2>
-        <small>找工作呀找工作呀 ~ </small>
+        <h1>Welcome to Forest's Blog!</h1>
         <hr>
         <ul>
             {% for post in paginator.posts %}
@@ -36,6 +35,9 @@ layout: default
                 <div class="excerpt">
                     {{post.excerpt}}
                 </div>
+                <div class="read-all">
+                    <a  href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
                 <hr>
               </li>
             {% endfor %}
@@ -46,16 +48,16 @@ layout: default
         <!-- Pagination links -->
         <div class="pagination">
           {% if paginator.previous_page %}
-            <a href="/blog/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl}}" class="previous"><i class="fa fa-angle-left"></i></a>
+            <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"><i class="fa fa-angle-left"></i></a>
           {% else %}
             <span class="previous disable"><i class="fa fa-angle-double-left"></i></span>
             <span class="previous disable"><i class="fa fa-angle-left"></i></span>
           {% endif %}
           <span class="page_number ">{{ paginator.page }}/{{ paginator.total_pages }}</span>
           {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path| prepend: site.baseurl  }}" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="/blog/page{{ paginator.total_pages}}" class="next"><i class="fa fa-angle-double-right"></i></a>
+            <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-angle-right"></i></a>
+            <a href="{{ site.baseurl }}/page{{ paginator.total_pages }}" class="next"><i class="fa fa-angle-double-right"></i></a>
           {% else %}
             <span class="next disable"><i class="fa fa-angle-right"></i></span>
             <span class="next disable"><i class="fa fa-angle-double-right"></i></span>
@@ -65,17 +67,28 @@ layout: default
     <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
     <div class="right">
         <div class="wrap">
-            
+            <div class="side">
+                <div>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Recent Posts
+                </div>
+                <ul class="content-ul" recent>
+                    {% for post in site.posts offset: 0 limit: 10  %}
+                        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
             <!-- Content -->
             <div class="side ">
                 <div>
                     <i class="fa fa-th-list"></i>
-                    分类
+                    Categories
                 </div>
                 <ul class="content-ul" cate>
-                    {% for category in site.categories order:ascending %}
+                    {% for category in site.categories %}
                     <li>
-                        <a href="{{ root_url }}{{ site.baseurl }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
+                        <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
                             <span class="name">
                                 {{ category | first }}
                             </span>
@@ -89,7 +102,7 @@ layout: default
             <div class="side">
                 <div>
                     <i class="fa fa-tags"></i>
-                    标签云
+                    Tags
                 </div>
                 <div class="tags-cloud">
                     {% assign first = site.tags.first %}
@@ -102,7 +115,12 @@ layout: default
                         {% assign min = tag[1].size %}
                       {% endif %}
                     {% endfor %}
-                    {% assign diff = max | minus: min %}
+
+                    {% if max == min %}
+                        {% assign diff = 1 %}
+                    {% else %}
+                        {% assign diff = max | minus: min %}
+                    {% endif %}
 
                     {% for tag in site.tags %}
                       {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
@@ -120,20 +138,9 @@ layout: default
                       {% else %}
                         {% assign color = 8 | minus: base %}
                       {% endif %}
-                      <a href="{{ root_url }}{{ site.baseurl }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
+                      <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
                     {% endfor %}
                 </div>
-            </div>
-            <div class="side">
-                <div>
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    最近文章
-                </div>
-                <ul class="content-ul" recent>
-                    {% for post in site.posts offset: 0 limit: 10  %}
-                        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
             </div>
 
             <!-- <div class="side">
