@@ -115,12 +115,13 @@
                                 text-align: center;
                                 margin-right: 15px;
                                 margin-top: 3px;
-                                padding: 0 10px;
+                                padding: 0px 10px;
                                 font-size: 12px;
                                 color: #fff;
                                 background-color: #bbb;
-                                border-radius: 50%;
+                                border-radius:50%;
                                 transition: 0.5s ease-in-out;
+                                    -webkit-transition: 0.4s ease;
                             }
                         }
                         &:last-of-type a {

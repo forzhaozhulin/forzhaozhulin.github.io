@@ -1,0 +1,24 @@
+body {
+	background-image: url(http://www.51pptmoban.com/d/file/2014/05/13/5124ee28759d3dcb61d04179ac509568.jpg);
+    background-attachment: fixed;
+	font-family: 'Microsoft YaHei', 'Helvetica','Arial','SimHei', sans-serif;
+}
+/**设置滚动条的样式**/
+::-webkit-scrollbar {
+    width: 13px;
+    margin-left: 25px;
+    position: absolute;
+}
+/**滚动槽**/
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #708090;
+    background-color:#708090;
+}
+/**滚动条滑块**/
+::-webkit-scrollbar-thumb {
+    background: #f7f7f7; 
+    -webkit-box-shadow: inset 0 0 6px #d1cfcf;  
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(245,245,245,0.4);
+}
