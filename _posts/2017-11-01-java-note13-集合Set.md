@@ -12,6 +12,8 @@ tags: 集合 Set
 
 为了保存数量不确定的数据，以及保存具有映射关系的数据（也被称为关联数组）。Java提供集合类，集合类主要负责保存、盛装其他数据，因此集合类也被称为容器类。
 
+<!-- more -->
+
 ---
 
 ![mark](http://ovct5gg6c.bkt.clouddn.com/blog/171101/1ib9E0mhfH.png?imageslim)

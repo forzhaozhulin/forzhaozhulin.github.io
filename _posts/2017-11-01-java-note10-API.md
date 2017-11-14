@@ -12,6 +12,8 @@ tags: Scanner Random System Object Date Calendar
 
 **Scanner类是一个基于正则表法师的文本扫描器。**
 
+<!-- more -->
+
 ---
 
 主要实现键盘录入；
