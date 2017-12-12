@@ -25,6 +25,10 @@ type: page
 
 欢迎大家提一些对本站主题的建议，可以直接在下面留言或者新建一个 [Issue](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues)。
 
+## My Friends
+
+[虚竹](http://www.xulibin.tech/) [code18](http://www.daihao18.com/)
+
 ## Comments
 
 {% include comments.html %}
