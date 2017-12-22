@@ -43,7 +43,7 @@ tags: jsp 指令 九大内置对象
 
 1.  html注释：<!—注释 -->
 2.  java注释：Java的注释必须嵌入在上面介绍的三个脚本中，不能在jsp其他位置书写。
-3. jsp自己的注释：<%-- 注释--%>
+3.  jsp自己的注释：<%-- 注释--%>
 
 ### jsp指令：
 
@@ -146,7 +146,7 @@ pageConext它是一个工具类，有三个功能：
 2. 给其他4个域对象==（容器）中的设置数据    
 3. 从4个容器中取出数据
 
-```jsp
+```html
     <%= pageContext.getException() %><br/>
     <%= pageContext.getOut() %><br/>
     <%= pageContext.getPage() %><br/>

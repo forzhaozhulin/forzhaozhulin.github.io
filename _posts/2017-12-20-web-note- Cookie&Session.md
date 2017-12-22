@@ -164,4 +164,4 @@ Session对象的创建时间：
 #### Session的销毁时间：
 
 1. （自动去死）Session在服务器的存活时间。Session对象在服务器内部有默认的存活的时间。一般默认是30分钟。如果在30分钟内，用户没有再对当前这个服务器中的资源进行任何的访问操作，这时只要时间到达30分钟，服务器会自动的销毁这个session。
-2.  在程序执行中,手动销毁session容器, 使用 session.invalidate()
+2. 在程序执行中,手动销毁session容器, 使用 session.invalidate()
