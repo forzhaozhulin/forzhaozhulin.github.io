@@ -8,7 +8,9 @@ tags: OGNL表达式
 
 * content
 {:toc}
-##OGNL表达式
+
+
+## OGNL表达式
 
 OGNL表达式主要用于页面的取值，类似于EL表达式。（OGNL表达式需要结合s标签来使用）
 
